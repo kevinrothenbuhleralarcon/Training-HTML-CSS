@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 16px;
+    font-family: "Montserrat", "sans-serif";
+    color: rgba(0, 0, 0, 0.87);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.header {
+    height: 427px;
+    z-index: 100;
+}
+
+.header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    z-index: 100;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-nav {
+    margin-left: 5vW;
+    width: 35vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.header-nav a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #9F9F9F;
+    font-size: 17px;
+    min-width: 75px;
+    text-align: center;
+    transition: color .3s;
+}
+
+.header-nav a:hover, a.active {
+    color: #000000;
+}
+
+.social {
+    display:flex;
+    margin-right: 3vw;
+    justify-content: space-around;
+}
+
+.social a {
+    margin-left: 2vw;
+    text-align: center;
+    opacity: 0.5;
+    transition: opacity .3s;
+}
+
+.social a:hover {
+    opacity: 1;
+}
+
+.banner {
+    position: absolute;
+    top: 110px;
+    left: 0;
+    right: 0;
+    height: 317px;
+    background-image: url("../res/img/header.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.page {
+    display: flex;
+    justify-content: space-between;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80vw;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+    z-index: 2;
+}
+
+.articles a {
+    text-decoration: none;
+}
+
+.articles a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+.articles article {
+    display: flex;
+    max-width: 940px;
+    margin: 50px 0 0 0;
+    text-align: justify;
+    animation: slideDown 3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(200px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.article-date {
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 17px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+.articles img {
+    margin-right: 25px;
+    transition: transform .5s;
+}
+
+.articles img:hover {
+    transform: scale(1.1);
+}
+
+.article-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.article-content p {
+    margin: 0;
+}
+
+.article-title {
+    font-weight: 700;
+    font-size: 36px;
+    color: #000000;
+    line-height: 1.1;
+    font-family: "Cardo", serif;
+    margin: 0 0 15px 0;
+}
+
+.article-title::after, .article-title::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #000000;
+}
+
+aside {
+    background: #FBFBFB;
+    padding: 40px;
+    width: 20vw;
+    z-index: 1;
+}
+
+aside h4 {
+    font-size: 30px;
+    line-height: 0.7;
+    margin: 35px 0px;
+}
+
+aside h4:first-child {
+    margin-top: 0;
+}
+
+aside ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+
+aside li {
+    padding: 6px 0;
+}
+
+aside li:first-child {
+    padding-top: 0;
+}
+
+aside a {
+    text-decoration: none;
+    color: #9F9F9F;
+}
+
+aside a:hover {
+    text-decoration: underline;
+}
+
+aside hr {
+    border: none;
+    background: #C4C4C4;
+    height: 1px;
+    margin: 40px 0;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .page {
+        display: block;
+    }
+
+    .articles {
+        width: 100%;
+    }
+
+    .articles article {
+        width: 100%;
+    }
+
+    aside {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 800px) {
+    
+
+    .articles article {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .articles article::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background: rgba(0, 0, 0, .3);
+    }
+
+    .article-content {
+        align-items: center;
+    }
+
+    .article-title {
+        text-align: center;
+    }
+    .articles img {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .header {
+        height: 40vh;
+    }
+
+    .header-bar {
+        position: static;
+        flex-direction: column;
+        justify-content: flex-start;
+        max-height: 96px;
+        height: 50%;
+    }
+    .banner {
+        height: 50%;
+        position: static;
+    }
+
+    .header-nav {
+        margin: 5vw 2vw;
+        width: 100%;
+    }
+}
