@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --topbarColor: #2CC09C;
+    --topbarBackground: #212529;
+}
+
+.topbar {
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    color: #FFF;
+    background: #212529; /*permet au moins un minimum de compatibilité avec IE car il ne supporte pas les variable (ni les SVG)*/
+    background: var(--topbarBackground);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.topbar ul {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+}
+
+.topbar li {
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+}
+
+.contact {
+    justify-content: space-between;
+    background: var(--topbarColor);
+}
+
+.contact li {
+    height: 40px;
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    height: 12px;
+    width: 12px;
+}
+
+.links li {
+    height: 50px;
+}
+
+.links li:first-child {
+    margin-right: 25px;
+}
+
+.icon-links {
+    color: var(--topbarColor);
+    height: 16px;
+    width: 16px;
+}
+
+.lang {
+    margin-left: auto;
+}
+
+.lang a::after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+    border-top: 6px solid #FFF;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.topbar a:hover {
+    color: var(--topbarColor);
+}
+
+@media only screen and (min-width: 770px) {
+
+    .topbar {
+        font-size: 14px;
+        background: linear-gradient(
+            to right,
+            var(--topbarColor) 50%,
+            var(--topbarBackground) 50.01%
+        );
+    }
+
+    .topbar-container {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        background: var(--topbarBackground);
+    }
+
+    .contact {
+        justify-content: flex-start;
+    }
+
+    .contact li {
+        height: 55px;
+    }
+
+    .contact li:last-child {
+        margin-left: 23px;
+        margin-right: 0;
+        padding-left: 0;
+        background: var(--topbarBackground);
+    }
+
+    .contact li:last-child::before {
+        content: "";
+        display: inline-block;
+        margin-right: 15px;
+        border-right: 30px solid transparent;
+        border-bottom: 55px solid var(--topbarColor);
+    }
+
+    .contact li.icon:last-child {
+        color: var(--topbarColor);
+    }
+
+    .icon {
+        margin-right: 8px;
+        height: 16px;
+        width: 16px;
+    }
+}
