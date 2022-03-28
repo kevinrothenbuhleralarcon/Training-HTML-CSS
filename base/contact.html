@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Le restaurant........">
+        <meta name="keywords" content="Restaurant, Montpellier, Fruit de mer">
+        <link rel="stylesheet" href="./styles/styles.css">
+        <title>Le fiasco, Nous contacter</title>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li><a href="index.html" target="_parent">Retour à l'acceuil</a></li>
+                <li><a href="menu/entree1.html" >Entrée 1</a></li>            
+                <li><a href="contact.html" >Contact</a></li>
+            </ul>
+        </nav>
+        <h1>Nous contacter</h1>
+        <form action="contact.html">
+            <fieldset>
+                <legend>Nous contacter</legend>
+                <div>
+                    <label for="emailInput">Votre email</label>
+                    <input type="email" name="email" id="emailInput" placeholder="contact@demo.com" autofocus required>   
+                </div>
+                <div>
+                    <label for="fileInput">Votre nom</label>
+                    <input type="file" name="file" id="fileInput">
+                </div>
+                <div>
+                    <label for="nameInput">Votre nom</label>
+                    <input type="text" name="firstname" id="nameInput">
+                </div>
+                <div>
+                    <label for="passwordInput">Mot de passe</label>
+                    <input type="password" name="password" id="passwordInput">
+                </div>
+                <div>
+                    <label for="message">Votre message</label>
+                    <textarea name="message" id="message" cols="30" rows="10" placeholder="Votre message"></textarea>
+                </div>
+                <div>
+                    <label for="sexe"></label>
+                    <select name="sexe" id="sexe">
+                        <option value="m">Masculin</option>
+                        <option value="f">Féminin</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="animal"></label>
+                    <select name="animal" id="animal">
+                        <optgroup label="Mammifère">
+                            <option>Chat</option>
+                            <option>Chien</option>
+                        </optgroup>
+                        <optgroup label="Poisson">
+                            <option>Poisson</option>
+                        </optgroup>
+                       
+                    </select>
+                </div>
+                <div>
+                    <label>Sexe</label>
+                    <div>
+                        <input type="radio" name="sexe2" id="masc">
+                        <label for="masc">Masculin</label>
+                    </div>     
+                    <div>
+                        <input type="radio" name="sexe2" id="fem" checked>
+                        <label for="fem">Féminin</label>
+                    </div>                 
+                </div>
+                <div>
+                    <label><input type="checkbox" name="cgu"> J'accepte les conditions d'utilisation</label>
+                </div>
+                <div>
+                    <input type="submit" value="Envoyer un email">
+                    <input type="reset" value="Annuler">
+                </div>
+            </fieldset>
+        </form>
+    </body>
+</html>
